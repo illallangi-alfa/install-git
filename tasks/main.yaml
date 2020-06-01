@@ -1,0 +1,9 @@
+---
+- name: "Install git (debian)"
+  apt:
+    pkg: "{{ install_git_packages[(ansible_os_family | lower) + '_' + (ansible_architecture | lower)] | json_query('[].name')}}"
+    update_cache: yes
+    install_recommends: no
+  register: installed_git_packages
+  tags:
+    - "git"

@@ -1,0 +1,6 @@
+---
+install_git_packages:
+  common: &common
+    - name: "git"
+  debian_armv7l: *common
+  debian_x86_64: *common
